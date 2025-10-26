@@ -2,7 +2,7 @@ from itertools import permutations
 
 
 def largest_number_naive(numbers):
-    print(numbers)
+
     numbers = list(map(str, numbers))
 
     largest = 0
