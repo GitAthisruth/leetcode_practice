@@ -3,14 +3,10 @@ from itertools import permutations
 
 def largest_number_naive(numbers):
 
-    numbers = list(map(str, numbers))
-
-    largest = 0
-
-    for permutation in permutations(numbers):
-        largest = max(largest, int("".join(permutation)))
-
-    return largest
+    numbers = list(map(int, numbers))
+    numbers.sort(reverse=True)
+    numbers = int(''.join(map(str, numbers)))
+    return numbers
 
 
 if __name__ == '__main__':
