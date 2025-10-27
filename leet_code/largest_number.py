@@ -1,11 +1,9 @@
-from itertools import permutations
-
 
 def largest_number_naive(numbers):
 
-    numbers = list(map(int, numbers))
-    numbers.sort(reverse=True)
-    numbers = int(''.join(map(str, numbers)))
+    numbers = list(map(str, numbers))
+    numbers.sort(key=lambda x:x*10, reverse=True)
+    numbers = ''.join(numbers)
     return numbers
 
 
