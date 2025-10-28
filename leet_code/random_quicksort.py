@@ -1,7 +1,5 @@
 ls = [25,2,4,1,100,5,0]
 
-
-
 def random_quicksort(ls):
     if len(ls)<=1:
         return ls
