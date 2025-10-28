@@ -11,6 +11,7 @@
 # ls.sort()
 # print(ls)  
 
+#Bubble sort
 
 ls = [6,78,100,45,34,23,6,1]
 
