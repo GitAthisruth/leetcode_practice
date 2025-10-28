@@ -24,3 +24,18 @@
 #         people.pop(index)
 #     return people[0]
 # print(josephus1(5,2))
+
+
+ls = [5,6,7,24,1,0,34,200,3,5,6]
+
+def insertion_sort(ls):
+    for i in range(1,len(ls)):
+        j=i-1
+        key = ls[i]
+        while j>=0 and key<ls[j]:
+            ls[j+1]  = ls[j]
+            j-=1
+        ls[j+1] = key
+    return ls        
+
+print(insertion_sort(ls))
