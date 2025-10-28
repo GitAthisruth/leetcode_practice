@@ -27,7 +27,7 @@ def merge(left,right):
 
     return result
 
-
+#merge sort is best sorting algorithm with time complexity O(nlogn))
 
 print(splitting_ls(ls))
 
