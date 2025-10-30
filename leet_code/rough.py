@@ -1,41 +1,32 @@
-# def josephus(n,k):
-#     if n==1:
-#         return 1
-#     else:
-#         return (josephus(n-1,k)+k-1)%n+1
+money = 8
+coins = [5, 4, 1]
 
-# print(josephus(5,2))
+steps = 0  # to count total recursive calls
+
+def change(money, coins, memo=None):
+    global steps
+    steps += 1   # count each function call
+
+    if memo is None:
+        memo = {}
+    if money in memo:
+        return memo[money]
+    if money == 0:
+        return 0
+    if money < 0:
+        return float("inf")
+
+    min_count = float("inf")
+
+    for coin in coins:
+        num_of_coins = change(money - coin, coins, memo)
+        if num_of_coins + 1 < min_count:
+            min_count = num_of_coins + 1
+        memo[money] = min_count
+
+    return min_count
 
 
-# def josephus(n,k):
-#     result = 0
-#     for i in range(2,n+1):
-#         result = (result+k) %i
-#     return result+1
-
-# print(josephus(5,2))
-
-# def josephus1(n,k):
-#     people = list(range(1,n+1))
-#     index = 0
-#     while len(people)>1:
-#         print(people)
-#         index = (index+k-1)%len(people)
-#         people.pop(index)
-#     return people[0]
-# print(josephus1(5,2))
-
-
-ls = [5,6,7,24,1,0,34,200,3,5,6]
-
-def insertion_sort(ls):
-    for i in range(1,len(ls)):
-        j=i-1
-        key = ls[i]
-        while j>=0 and key<ls[j]:
-            ls[j+1]  = ls[j]
-            j-=1
-        ls[j+1] = key
-    return ls        
-
-print(insertion_sort(ls))
+result = change(money, coins)
+print("Minimum coins:", result)
+print("Total recursive calls:", steps)

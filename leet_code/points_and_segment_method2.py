@@ -7,10 +7,9 @@ def points_cover(start,end,points):
     end.sort()
     count = []
     for p in points:
-        left_bisect = bisect.bisect_left(start,p)
-        print(start,end)
-        righ_bisect = bisect.bisect_right(end,p)
-        count.append(left_bisect-righ_bisect)
+        right_bisect = bisect.bisect_right(start,p)
+        left_bisect = bisect.bisect_left(end,p)
+        count.append(right_bisect-left_bisect)
 
     return count
 
