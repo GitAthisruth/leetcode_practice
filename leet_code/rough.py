@@ -1,32 +1,24 @@
-money = 8
-coins = [5, 4, 1]
+def primitive_calculator(n):
+    dp = [0]*(n+1)
+    prev = [0]*(n+1)
+    for i in range(1,n+1):
+        dp[i] = dp[i-1]+1
+        prev[i] = i-1
 
-steps = 0  # to count total recursive calls
+        if i%2 == 0 and dp[i//2]+1<dp[i]:
+            dp[i] = dp[i//2]+1
+            prev[i]=i//2
+        
+        if i%3 == 0 and dp[i//3]+1<dp[i]:
+            dp[i] = dp[i//3]+1
+            prev[i]=i//3
 
-def change(money, coins, memo=None):
-    global steps
-    steps += 1   # count each function call
+    sequence = []
+    while n<0:
+        n=prev[n]
+        sequence.append(n)
+    sequence.reverse()
+    return sequence
 
-    if memo is None:
-        memo = {}
-    if money in memo:
-        return memo[money]
-    if money == 0:
-        return 0
-    if money < 0:
-        return float("inf")
-
-    min_count = float("inf")
-
-    for coin in coins:
-        num_of_coins = change(money - coin, coins, memo)
-        if num_of_coins + 1 < min_count:
-            min_count = num_of_coins + 1
-        memo[money] = min_count
-
-    return min_count
-
-
-result = change(money, coins)
-print("Minimum coins:", result)
-print("Total recursive calls:", steps)
+n =5
+print(primitive_calculator(n))

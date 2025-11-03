@@ -16,12 +16,13 @@ def compute_operations(n):
         if i % 3 == 0 and dp[i // 3] + 1 < dp[i]:
             dp[i] = dp[i // 3] + 1
             prev[i] = i // 3
-
+    print(prev)
     # reconstruct sequence
     sequence = []
     while n > 0:
         sequence.append(n)
         n = prev[n]
+        print(n)
     sequence.reverse()
     return sequence
 
