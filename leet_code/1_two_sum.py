@@ -70,27 +70,25 @@
 # print(result)
 
 
-nums = [2,7,11,15,7,2,8,1]
-nums.sort()
-val = []
+nums = [1,2,7,8,11,15]
 target = 9
-n = len(nums)
-
-left,right = 0,len(nums)-1
-
-while left<right:
-    s = nums[left]+nums[right]
-    if s<target:
-        left+=1
-    elif s>target:
-        right-=1
-    else:
-        val.append([left,right])
-    left+=1
-    right-=1
-
-# print(val)
 
 
-# best method
+def two_sum(nums,target):
+    nums.sort()
+    l,r = 0, len(nums)-1
+    result = []
+    while l<r:
+        s=nums[l]+nums[r]
+        if s==target:
+            result.append([l,r])
+            l+=1
+            r-=1
 
+        elif s<target:
+            l+=1
+        else:
+            r-=1
+    return result
+
+print(two_sum(nums,target))
