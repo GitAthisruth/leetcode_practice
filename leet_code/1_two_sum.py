@@ -94,12 +94,3 @@ while left<right:
 
 # best method
 
-nums = [3,3]
-val = []
-n= len(nums)
-target = 6
-for i in range(1,n):
-    if nums[i]+nums[i-1]==target:
-        val.append([i-1,i])
-
-print(val)
