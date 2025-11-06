@@ -17,8 +17,8 @@ if __name__ == "__main__":
     values = [3, 4, 5, 6]  # Values of the items
     n = len(weights)  # Number of items
 
-    max_value = knapsack_with_repetitions(W, weights, values, n)
-    print("Maximum value in the knapsack:", max_value)
+    # max_value = knapsack_with_repetitions(W, weights, values, n)
+    # print("Maximum value in the knapsack:", max_value)
 
 
 
