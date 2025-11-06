@@ -55,21 +55,6 @@
 #             result.extend([num1,num2])
 
 # print(result)
-#Best method
-nums = [2,7,11,15]
-target = 9
-result = set()
-seen = {}
-
-for i,num in enumerate(nums):
-    complement = target - num
-    # print(seen)
-    if complement in seen:
-        result.add((seen[complement],i))
-    seen[num]=i
-print(seen)
-print(result)
-
 
 # nums = [1,2,7,8,11,15]
 # target = 9
@@ -93,3 +78,20 @@ print(result)
 #     return result
 
 # print(two_sum(nums,target))
+
+
+
+#Best method - correct method
+# nums = [2,7,11,15]
+# target = 9
+# result = set()
+# seen = {}
+
+# for i,num in enumerate(nums):
+#     complement = target - num
+#     # print(seen)
+#     if complement in seen:
+#         result.add((seen[complement],i))
+#     seen[num]=i
+# print(seen)
+# print(result)
