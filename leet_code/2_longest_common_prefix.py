@@ -58,7 +58,6 @@ else:
         if all(word[:i]==min_word[:i] for word in strs):
             # output = "".join([min_word[:i]])
             output = min_word[:i]
-            pass
         else:
             break
 
