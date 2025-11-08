@@ -36,6 +36,7 @@ print(profit)
 # print(7 - 1)
 
 
+#Best solution
 
 class Solution(object):
     def maxProfit(self, prices):
@@ -55,3 +56,22 @@ class Solution(object):
                 max_profit = price - min_price
                 
         return max_profit
+
+
+
+
+
+prices = [7,1,5,3,6,4]
+
+min_price = min(prices)
+min_price_index = prices.index(min_price)
+
+# print(min_price_index)
+max_price = 0
+
+for i in range(min_price_index+1,len(prices)):
+    print(prices[i],i,i-prices[min_price_index])
+    if prices[i]>prices[min_price_index] and (prices[i]-prices[min_price_index])>max_price:
+        max_price = prices[i]-prices[min_price_index]
+
+print(max_price)
