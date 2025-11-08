@@ -2,7 +2,6 @@
 
 # In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
 
-
 # Example 1:
 
 # Input: numRows = 5
@@ -11,7 +10,6 @@
 
 # Input: numRows = 1
 # Output: [[1]]
-
 
 # print([1]*1)
 # print(list(range(1,1)))
@@ -30,17 +28,17 @@
 #     print("\n")
 # print(f'row:{row}')
 
+# triangle = []
 
+# for i in range(3):
+#     row = [1]*(i+1)
+#     for j in range(1,i):#for taking the middle values.
+#         print(triangle)
+#         print(f"j:{j},i:{i},i-1:{i-j}")
+#         print(triangle[i-1])
+#         row[j]= triangle[i-1][j-1] + triangle[i-1][j]
+#         print(row[j])
+#     triangle.append(row)
 
-
-
-triangle = []
-
-for i in range(3):
-    row = [1]*(i+1)
-    for j in range(1,i):#for taking the middle values.
-        row[j]= triangle[i-1][j-1] + triangle[i-1][j]
-    triangle.append(row)
-
-print(triangle)
+# print(triangle)
 
