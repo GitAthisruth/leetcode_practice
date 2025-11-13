@@ -21,7 +21,7 @@
 # k<=3
 
 k=3
-nums = [1,2,3,8]
+nums = [1,2,3,1]
 flag = False
 for i in range(len(nums)-1):
     for j in range(i+1,len(nums)):
@@ -30,7 +30,6 @@ for i in range(len(nums)-1):
             flag = True
             break
     print("\n")
-
 print(flag)
 
 
@@ -46,5 +45,5 @@ for i,num in enumerate(nums):
 
 print(index_saver)
 
-print(index_saver[1])
-print(flag)
+# print(index_saver[1])
+# print(flag)

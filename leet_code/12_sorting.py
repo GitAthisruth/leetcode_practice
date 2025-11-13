@@ -48,7 +48,7 @@ def find_min_rotated(ls):
     return ls[left]
 
 ls = [4,5,6,7,0,1,2]
-# print(find_min_rotated(ls))  # Output: 0
+print(find_min_rotated(ls))  # Output: 0
 
  
 

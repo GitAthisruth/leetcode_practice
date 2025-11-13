@@ -59,7 +59,7 @@ class Solution(object):
 
 
 
-
+#Bad method 
 
 prices = [7,1,5,3,6,4]
 
