@@ -18,9 +18,6 @@
 #     print(max_dot_product(prices, clicks))
     
 
-
-
-
 # print(max_value)
 
 

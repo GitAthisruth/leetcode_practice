@@ -1,22 +1,22 @@
-lis = [6,4,1]
-print(sorted(lis,reverse=True))
+lis = [6,4,2]
+# print(sorted(lis,reverse=True))
 money = 8
 
-# def change(lis,money):
-#     lis.sort(reverse=True)
-#     val = 0
-#     result = []
-#     while money!=0:
-#         if lis[val]<=money:
-#             money-=lis[val]
-#             print(money)
-#             result.append(lis[val])
-#         else:
-#             val+=1
+def change(lis,money):
+    lis.sort(reverse=True)
+    val = 0
+    result = []
+    while money>0:
+        if lis[val]<=money:
+            money-=lis[val]
+            # print(money)
+            result.append(lis[val])
+        else:
+            val+=1
 
-#     return result
+    return result
 
-# # print(change(lis,money))
+print(change(lis,money))
 
 
 
@@ -41,7 +41,8 @@ money = 8
 #     return min_coins
 
 
-
+lis = [6,4,1]
+money = 8
 
 
 def get_change(money, coins, memo=None):
@@ -65,4 +66,4 @@ def get_change(money, coins, memo=None):
     return min_coins
 
 
-print(get_change(money,lis))
+# print(get_change(money,lis))

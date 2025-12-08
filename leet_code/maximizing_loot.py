@@ -42,7 +42,7 @@ def Maximum_Loot(items,capacity):
     return max_value
 
 
-print(Maximum_Loot(items,capacity))
+# print(Maximum_Loot(items,capacity))
 
 
 
@@ -52,21 +52,22 @@ from sys import stdin
 
 
 
-def optimal_value(capacity, weights, values):
-    value = 0.
-    items = []
-    for i in range(len(weights)):
-        items.append((weights[i],values[i],values[i]/weights[i]))
-    items.sort(key=lambda x:x[2],reverse=True)
-    for i in range(len(items)):
-        if capacity>=weights[i]:
-            value+=values[i]
-            capacity-=weights[i]
-            print(capacity)
+def maximum_loot(weights, values, capacity):
+    items = [(weights[i], values[i], values[i] / weights[i]) for i in range(len(weights))]
+    items.sort(key=lambda x: x[2], reverse=True)
+
+    value = 0
+
+    for wei, val, rat in items:
+        if capacity >= wei: 
+            value += val
+            capacity -= wei
         else:
-            value+=capacity*items[i][2]
-            capacity-=weights[i]
+            value += capacity * rat
+            break  # Stop because capacity is full
+
     return value
+
 
 
 if __name__ == "__main__":
@@ -74,7 +75,7 @@ if __name__ == "__main__":
     capacity = 9
     values = data[::2]
     weights = data[1::2]
-    opt_value = optimal_value(capacity, weights, values)
+    opt_value = maximum_loot(capacity, weights, values)
     print("{:.10f}".format(opt_value))
 
 
