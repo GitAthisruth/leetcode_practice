@@ -36,7 +36,7 @@ def knapsack(weights, values, capacity):
         for w in range(1, capacity + 1):  # capacity 1..W
 
             # Option 1: Don't take item i-1
-            # dp[i][w] = dp[i - 1][w]
+            dp[i][w] = dp[i - 1][w]
 
             # Option 2: Take item i-1 (if weight fits)
             if weights[i - 1] <= w:
@@ -47,8 +47,8 @@ def knapsack(weights, values, capacity):
 
 
 
-# weights = [2, 3, 4, 5]
-# values  = [3, 4, 5, 6]
-# capacity = 5
+weights = [2, 3, 4, 5]
+values  = [3, 4, 5, 6]
+capacity = 5
 
-# print(knapsack(weights, values, capacity))
+print(knapsack(weights, values, capacity))

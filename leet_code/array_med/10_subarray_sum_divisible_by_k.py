@@ -45,7 +45,7 @@ k = 5
 
 for num in nums:
     prefix_sum+=num
-    remainder = prefix_sum%5
+    remainder = prefix_sum%k
 
     if remainder in rem_freq:
         count+=rem_freq[remainder]

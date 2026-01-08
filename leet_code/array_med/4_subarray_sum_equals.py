@@ -24,7 +24,7 @@ for i in range(len(nums)):
             val+=1
 
 # print(val)
-print(subarrays)
+# print(subarrays)
 
 nums = [1,2,3]
 prefix_map = {0:1}

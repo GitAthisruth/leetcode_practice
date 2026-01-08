@@ -19,14 +19,35 @@
 # Explanation: Intervals [1,4] and [4,7] are considered overlapping.
 
 
-intervals = [[4,7],[1,4]]
+# intervals = [[4,7],[1,4]]
+# intervals.sort()
+# print(intervals)
+# val = []
+# for i in range(1,len(intervals)):
+#     if intervals[i][0]==intervals[i-1][1]+1 or intervals[i][0]==intervals[i-1][1]-1 or intervals[i][0]==intervals[i-1][1]:
+#         val.append([min(intervals[i][0],intervals[i-1][0]),intervals[i][1]])
+#     else:
+#         val.append(intervals[i])
+
+
+# print(val)
+
+
+
+
+intervals = [[4,7],[1,4],[8,10],[15,18]]
 intervals.sort()
-val = []
-for i in range(1,len(intervals)):
-    if intervals[i][0]==intervals[i-1][1]+1 or intervals[i][0]==intervals[i-1][1]-1 or intervals[i][0]==intervals[i-1][1]:
-        val.append([min(intervals[i][0],intervals[i-1][0]),intervals[i][1]])
+
+merged = [intervals[0]]
+
+for i in range(1, len(intervals)):
+    last = merged[-1]
+    curr = intervals[i]
+    print("Last:", last, "Curr:", curr)
+
+    if curr[0] <= last[1]:
+        last[1] = max(last[1], curr[1])
     else:
-        val.append(intervals[i])
+        merged.append(curr)
 
-
-print(val)
+print(merged)

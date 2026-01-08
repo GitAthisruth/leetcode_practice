@@ -36,7 +36,7 @@
 
 # finding minimum value using unsorted bs method.
 
-nums = [3,4,5,1,2]
+nums = [3,4,5,1,2] #rotated sorted array
 l,r = 0,len(nums)-1
 while l<r:
     m = (l+r)//2
@@ -47,3 +47,10 @@ while l<r:
 
 print(nums[l])
 
+nums = [3,4,5,1,2]
+val =  nums[0]
+for i in range(1,len(nums)):
+    if nums[i]<val:
+        val = nums[i]
+
+print(val)

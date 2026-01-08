@@ -37,6 +37,8 @@ def knapsack(weights, values, W):
             else:
                 dp[i][w] = dp[i - 1][w]
 
+    print(dp)
+
     return dp[n][W]
 
 # Example usage
@@ -45,3 +47,26 @@ values = [3, 4, 5, 6]
 W = 5
 max_value = knapsack(weights, values, W)
 print("Maximum value in Knapsack =", max_value)
+
+
+
+
+
+# Greedy method
+
+def fk(weights,values,W):
+    value = 0
+    items = [(weights[i],values[i],values[i]/weights[i]) for i in range(len(weights))]
+    items.sort(key = lambda x:x[2] ,reverse=True)
+    print(items)
+
+    for w,v,r in items:
+        if W>=w:
+            value+=v
+            W-=W
+        else:
+            value+=W*r
+            break
+    return value
+
+# print(fk(weights,values,W))

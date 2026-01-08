@@ -33,7 +33,7 @@ for i in range(len(nums)):
     val = nums[i+1:]+nums[:i]
     answer.append(math.prod(val))
 
-# print(answer)
+print(answer)
 
 
 n= len(nums)
@@ -50,5 +50,5 @@ for i in range(n-1,-1,-1):
     suffix*=nums[i]
 
  
-print(answer)
+# print(answer)
 

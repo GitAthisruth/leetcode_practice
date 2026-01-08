@@ -15,9 +15,10 @@ height = [1,8,6,2,5,4,8,3,7]
 capacity = 0
 for i in range(len(height)-1):
     for j in range(i+1, len(height)):
+        print(j,i)
         area = (j - i) * min(height[i], height[j])
-        if area > capacity:
-            capacity = area
+        capacity = max(capacity, area)
+
 
 print("Max capacity:", capacity)
 
