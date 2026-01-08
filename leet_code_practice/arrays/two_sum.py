@@ -4,13 +4,12 @@ target = 9
 
 def twoSum(nums,target):
     seen = {}
-    val = []
     for i,num in enumerate(nums):
         rem = target - num
         if rem in seen:
-            val.extend([seen[rem],i])
+            return [seen[rem],i]
         seen[num] = i
-    return val
+  
 
 
 
