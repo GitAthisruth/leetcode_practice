@@ -26,5 +26,7 @@ ds = load_dataset("tatsu-lab/alpaca")
 
 
 
-ds = load_dataset("openwebtext")
-# Save the train split to JSON
+# ds = load_dataset("openwebtext")
+# # Save the train split to JSON
+
+# ds["train"].to_json("C:\\Users\\LENOVO\\Desktop\\openwebtext.json")
