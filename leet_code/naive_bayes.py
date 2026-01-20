@@ -1,4 +1,4 @@
-# Implementing Naive Bayes 
+# Implementing Naive Bayes - multinomial model for text classification
 
 
 dataset = [
@@ -17,7 +17,7 @@ dataset = [
 
 
 def tokenize(text):
-    return text.lower().split()
+    return text.lower().split()#splitting the texts into words
 
 import math
 from collections import defaultdict,Counter
@@ -53,16 +53,17 @@ def predict(text,class_counts,word_counts,vocabulary,priors):
     vocab_size = len(vocabulary)
 
     for cls in class_counts:
-        log_prob = math.log(priors[cls])
+        log_prob = math.log(priors[cls]) #logarithm of prior probability
         total_words_in_class = sum(word_counts[cls].values())
 
         for word in words:
             word_freq = word_counts[cls][word] + 1
             word_prob = word_freq / (total_words_in_class + vocab_size)
-            log_prob += math.log(word_prob)
+            log_prob += math.log(word_prob)#use logs to avoid tiny 
         
         scores[cls] = log_prob
 
+    print(scores)
     return max(scores,key=scores.get)
 
 
@@ -71,4 +72,4 @@ def predict(text,class_counts,word_counts,vocabulary,priors):
 class_counts,word_counts,vocabulary,priors = train_naive_bayes(dataset)
 
 print(predict("free free lottery offer", class_counts, word_counts, vocabulary, priors))
-print(predict("predict", class_counts, word_counts, vocabulary, priors))
+print(predict("hi", class_counts, word_counts, vocabulary, priors))
