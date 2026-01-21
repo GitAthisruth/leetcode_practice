@@ -1,12 +1,17 @@
 n = 5
 def ftz(n):
-    fact = 1
-    for i in range(n-1):
-        fact*=(n-i)
-    count = 0
-    while fact %10 == 0:
-        fact/=10
-        count+=1
-    return count
+    if n==0 or n==1:
+        return 1
+    return n*ftz(n-1)
 
 print(ftz(n))
+
+
+# optimal method
+
+def trailingZeroes(n):
+    count = 0
+    while n > 0:
+        n //= 5
+        count += n
+    return count
