@@ -1,8 +1,22 @@
-nums = [-2,0,-1]
-current_product = nums[0]
-max_ = nums[0]
-for i in range(1,len(nums)):
-    current_product = max(nums[i],current_product*nums[i])
-    max_ = max(current_product,max_)
+nums  = [5,1,3]
+target = 3
 
-print(max_)
+def search_rsa(nums,target):
+    l,r = 0,len(nums)-1
+    while l<=r:
+        m = (l+r)//2
+        if nums[m]==target:
+            return m
+        elif nums[l]<=nums[m]:
+            if nums[l]<=target<nums[m]:
+                r=m-1
+            else:
+                l=m+1
+        else:
+            if nums[m]<target<=nums[r]:
+                l=m+1
+            else:
+                r=m-1
+    return -1
+
+print(search_rsa(nums,target))
