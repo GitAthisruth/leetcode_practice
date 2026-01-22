@@ -61,7 +61,7 @@ print(val)
 
 
 
-def threeSum(self, nums):
+def threeSum(nums):
         nums.sort()
         result = []
         n = len(nums)
