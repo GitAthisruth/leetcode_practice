@@ -33,7 +33,7 @@ n = len(nums)
 val = []
 
 
-for i in range(n-2):
+for i in range(n):
     if i>0 and nums[i] == nums[i-1]:
         continue
     left,right = i+1,n-1
@@ -57,3 +57,43 @@ for i in range(n-2):
             while left < right and nums[right] == nums[right + 1]:
                 right -= 1
 print(val)
+
+
+
+
+def threeSum(self, nums):
+        nums.sort()
+        result = []
+        n = len(nums)
+        i = 0
+
+        while i < n-2:
+            if i > 0 and nums[i] == nums[i-1]:
+                i+=1
+                continue
+
+            j = i+1
+            k = n-1
+
+            while j < k:
+                s = nums[i] + nums[j] + nums[k]
+
+                if s == 0:
+                    result.append([nums[i],nums[j],nums[k]])
+
+                    j+=1
+                    k-=1
+
+                    while j < k and nums[j] == nums[j-1]:
+                        j+=1
+                    while j < k and nums[k] == nums[k+1]:
+                        k-=1
+
+                elif s < 0:
+                    j+=1
+                else:
+                    k-=1
+
+            i+=1
+
+        return result
