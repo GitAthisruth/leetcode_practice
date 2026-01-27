@@ -1,4 +1,4 @@
-matrix = [[1,2,3],[4,5,6],[7,8,9]]
+matrix = [[1,2,3],[4,5,6]]
 n=len(matrix)
 l = len(matrix[0])
 transpose = [[0]*n for i in range(l)]
