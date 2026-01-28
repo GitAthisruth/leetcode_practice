@@ -1,5 +1,5 @@
 s = "rat"
-t = "car"
+t = "cart"
 
 
 def valid_anagram(s,t):
@@ -22,9 +22,8 @@ def valid_anagram(s,t):
 
 
 def val_ana(s,t):
-    flag = False
     if len(s)!=len(t):
-        return flag
+        return False
 
     s_d = {}
     t_d = {}
@@ -33,16 +32,7 @@ def val_ana(s,t):
     for j in t:
         t_d[j] = t_d.get(j,0)+1
 
-    count = 0
-    for key in s_d:
-        if key in t_d:
-            if s_d[key] == t_d[key]:
-                count+=1
-                if count==len(s_d):
-                    flag = True
-
-
-    return flag
+    return s_d==t_d
 
 
 
