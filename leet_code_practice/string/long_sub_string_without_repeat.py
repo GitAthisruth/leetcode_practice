@@ -33,16 +33,12 @@ def lcs_pointer(s):
     max_len = 0
 
     for right in range(len(s)):
-        print("0",right,left,seen)
         while s[right] in seen:
             seen.remove(s[left])
             left += 1
-            print("1",seen,right,left)
-
 
         seen.add(s[right])
         max_len = max(max_len, right - left + 1)
-        print(2,seen,max_len,right,left)
 
     return max_len
 print(lcs_pointer(s))
