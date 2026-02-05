@@ -73,7 +73,7 @@ print("\nValues in reversed linked list:", val)
 
 
 
-def reverseList(self,head):
+def reverseList(head):
         prev = None
         current = head
         while current is not None:
