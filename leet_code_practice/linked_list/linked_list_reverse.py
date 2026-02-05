@@ -70,9 +70,6 @@ print("None")
 print("\nValues in reversed linked list:", val)
 
 
-
-
-
 def reverseList(head):
         prev = None
         current = head
