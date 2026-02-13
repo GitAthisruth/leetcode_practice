@@ -24,6 +24,13 @@ class LinkedList:
             node = node.next
         print("None")
 
+
+    def print_from_node(self,node):
+        while node:
+            print(node.element, end=" -> ")
+            node = node.next
+        print("None")
+
     def reverse(self):
         prev = None
         current = self.head
