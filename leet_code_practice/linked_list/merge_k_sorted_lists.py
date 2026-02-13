@@ -2,19 +2,6 @@ from linked_list import LinkedList , Node
 
 l = [LinkedList([1,4,5]),LinkedList([1,2,8]),LinkedList([4,6,9])]
 
-def merge_linked_list(l):
-    if not l:
-        return None 
-    if len(l)==1:
-        return l[0].head
-    val = []
-    for i in l:
-        current = i.head
-        while current:
-            val.append(current.element)
-            current = current.next
-    return val
-
 
 def splitting(m):
     if len(m)<=1:
@@ -42,6 +29,23 @@ def merge_sort(l,r):
     result.extend(r[j:])
 
     return result
+
+
+
+def merge_linked_list(l):
+    if not l:
+        return None 
+    if len(l)==1:
+        return l[0].head
+    val = []
+    for i in l:
+        current = i.head
+        while current:
+            val.append(current.element)
+            current = current.next
+    return val
+
+
 
 
 
