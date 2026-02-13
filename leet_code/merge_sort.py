@@ -7,9 +7,8 @@ def splitting_ls(ls):
     mid = len(ls)//2
     left = splitting_ls(ls[:mid])
     right = splitting_ls(ls[mid:])
+    print(left,right)
     return merge(left,right)
-
-
 
 def merge(left,right):
     i=j=0
