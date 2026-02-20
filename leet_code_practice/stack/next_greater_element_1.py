@@ -60,7 +60,19 @@ def next_greater_element(a,b):
 # print(rr)
 # print(gg)
 
-a,b = [4,1,2],[1,3,4,2]
+num1 =  Stack()
+
+num1.insert(4)
+num1.insert(1)
+num1.insert(2)
+
+num2 = Stack()
+
+num2.insert(1)
+num2.insert(3)
+num2.insert(4)
+num2.insert(2)
+
 
 def nge(a,b):
     safe = -1
@@ -79,5 +91,25 @@ def nge(a,b):
 
     return res
 
-print(nge(a,b))
+# print(nge(a,b))
+
+nums2 = [1,3,4,2]
+
+def nxt_greater_ele(a,b):
+    stack = []
+    nge = {}#for saving the bigger next element for comparing it num1 with num2 at last. 
+    for x in b:
+        while stack and x>stack[-1]:
+            small = stack.pop()
+            nge[small]=x
+        stack.append(x)
+    while stack:
+        nge[stack.pop()]=-1
+
+    return [nge[i] for i in a] 
+
+print(nxt_greater_ele(a,b))
+
+
+
 
