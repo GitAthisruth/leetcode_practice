@@ -34,22 +34,38 @@ class Stack:
 
 
     
-stack = Stack()
+# stack = Stack()
 
-stack.insert(1)
-stack.insert(2)
-stack.insert(3)
-stack.insert(4)
-stack.insert(6)
-
-
-print(stack.show())
-stack.pop()
+# stack.insert(1)
+# stack.insert(2)
+# stack.insert(3)
+# stack.insert(4)
+# stack.insert(6)
 
 
-print(stack.show())
+# print(stack.show())
+# stack.pop()
 
 
-print(stack.delete_element(4))
-print(stack.insert_index(3,4))
+# print(stack.show())
 
+
+# print(stack.delete_element(4))
+# print(stack.insert_index(3,4))
+
+if __name__ == "__main__":
+    print("This is the stack class")
+    print("You can use this class to create a stack and perform various operations on it")
+    stack = Stack()
+    stack.insert(1)
+    stack.insert(2)
+    stack.insert(3)
+    stack.insert(4)
+    stack.insert(6)
+
+    print(stack.show())
+    stack.pop()
+    print(stack.show())
+
+    print(stack.delete_element(4))
+    print(stack.insert_index(3, 4))
