@@ -36,7 +36,6 @@ for i in range(len(intervals)):
 
 result.append(newInterval)
 
-
 print(result)
 
 

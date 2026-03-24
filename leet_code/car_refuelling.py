@@ -1,4 +1,4 @@
-from sys import stdin
+# from sys import stdin
 
 
 def min_refills(distance, tank, stops):
@@ -30,3 +30,5 @@ distance = 950
 #     print(min_refills(d, m, stops))
 
 print(min_refills(distance,tank,stop))
+
+
