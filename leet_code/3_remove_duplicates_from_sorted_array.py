@@ -40,14 +40,14 @@ count = 1
 
 for i in range(1,len(ls1)):
     if ls1[i] != ls1[i-1]:
-        ls1[count] = ls1[i]
+        ls1[count]= ls1[i]
         count+=1
 
 
-for i in range(count,len(ls1)):
-    ls1[i]="_"
+# for i in range(count,len(ls1)):
+#     ls1[i]="_"
 
-print(count)
+# print(count)
 
 print(ls1)
 

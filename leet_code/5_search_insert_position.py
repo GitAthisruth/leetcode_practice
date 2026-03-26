@@ -44,7 +44,6 @@
      
      
 
-
 # def searchInsert(nums, target):
 #     left, right = 0, len(nums) - 1
 
