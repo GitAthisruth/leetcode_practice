@@ -56,3 +56,100 @@ else:
 print(result)
 
 
+
+
+
+
+nums = [0,1,2,3,4,5,6,7,9]
+
+
+lm = []
+
+for i in range(1,len(nums)):
+    if abs(nums[i-1]-nums[i])>1:
+        lm.append(i)
+
+
+#take the interval points an create final outputs .
+# for i in lm:
+#     print(i)
+print(lm)
+
+v = []
+start=0
+for i in range(len(lm)):
+    v.append(nums[start:lm[i]])
+    start = lm[i]
+print(start)
+if len(lm[start:])>0:
+    v.append(nums[lm[-1]:])
+print(v)
+result = []
+for i in range(len(v)):
+    if len(v[i])>1:
+        result.append(f"{v[i][0]}" + "->"+f"{v[i][-1]}") # In leetcode only .format method accept .
+    else:
+        result.append(f"{v[i][0]}")
+print(result)
+
+
+
+
+
+# 3th method 
+
+
+
+
+
+nums = [0,1,2,5,9,11,13,19,20,21]
+
+a = []
+start = 0
+len_val = 0
+for i in range(1,len(nums)):
+    if abs(nums[i-1]-nums[i])>1:
+        len_val+=len(nums[start:i])
+        if nums[start]!=nums[i-1]:
+            a.append(f"{nums[start]}->{nums[i-1]}")
+        else:
+            a.append(f"{nums[i-1]}")
+        start=i
+        
+
+if len(nums)-len_val!=1:
+    a.append(f"{nums[start]}->{nums[len(nums)-1]}")
+else:
+    a.append(f"{nums[-1]}")
+
+
+print(a)
+
+
+
+
+
+def summaryRanges(nums):
+    if not nums:
+        return []
+    a = []
+    start = 0
+    len_val = 0
+    for i in range(1,len(nums)):
+        if abs(nums[i-1]-nums[i])>1:
+            len_val+=len(nums[start:i])
+            if nums[start]!=nums[i-1]:
+                a.append("{0}->{1}".format(nums[start],nums[i-1]))
+            else:
+                a.append("{0}".format(nums[i-1]))
+            start=i
+                
+
+    if len(nums)-len_val!=1:
+        a.append("{0}->{1}".format(nums[start],nums[len(nums)-1]))
+    else:
+        a.append("{0}".format(nums[-1]))
+    return a
+
+print(summaryRanges([0,1,2,4,5,7]))
+

@@ -1,5 +1,3 @@
-# from sys import stdin
-
 
 def min_refills(distance, tank, stops):
     stops.sort()
