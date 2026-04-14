@@ -31,3 +31,47 @@
 # Then, we drive from position 10 to position 60 (expending 50 liters of fuel),
 # and refuel from 10 liters to 50 liters of gas.  We then drive to and reach the target.
 # We made 2 refueling stops along the way, so we return 2.
+
+
+
+# target = 100
+# startFuel = 10
+# stations = [[10,60],[20,30],[30,30],[60,40]]
+
+
+
+# stop = []#This is the kms wher petrol pumb available .
+# for i in stations:
+#     stop.append(i[0])
+# stop.sort()
+
+# print(stop)
+
+# stops = [0] + stop + [target]
+
+# print(stops)
+
+def min_ref(target,startFuel,stations):
+    kms = startFuel
+    refills = 0
+    for i in stations:
+        if startFuel>=i[0]:
+            startFuel=(startFuel-i[0])+i[1]
+            kms+=i[1]
+            refills+=1
+            print("kms",kms)
+
+        if kms>=target and refills>0:
+            print("refills",refills)
+            return 1
+    if refills == 0 and stations is None:
+        return 0
+    return -1
+
+
+target = 100
+startFuel = 1
+stations = [[10,100]]
+
+print(min_ref(target,startFuel,stations))
+
